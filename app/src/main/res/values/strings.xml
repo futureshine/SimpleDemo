@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpleDemo</string>
+    <string name="no_network">请将设备接入互联网</string>
+    <string name="load_complete">数据加载完成</string>
+</resources>
