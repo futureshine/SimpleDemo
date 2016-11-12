@@ -3,7 +3,7 @@ e瞳App组培训，简单app的示例代码
 
 ### 效果演示
 
- ![test](C:\Users\Lei Guo\Desktop\test.gif)
+![demo](https://github.com/futureshine/SimpleDemo/blob/master/demo.gif)
 
 ### 导入方法
 
