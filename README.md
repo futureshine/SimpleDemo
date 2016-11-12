@@ -1,13 +1,17 @@
 # SimpleDemo
 e瞳App组培训，简单app的示例代码
 
-#### 导入方法
+### 效果演示
+
+ ![test](C:\Users\Lei Guo\Desktop\test.gif)
+
+### 导入方法
 
 修改gradle文件中的`buildToolsVersion`为你电脑里面有的版本
 
-#### 代码流程
+####代码流程
 
-##### 新建工程，引入依赖
+#### 新建工程，引入依赖
 
 ```java
     compile 'com.android.support:appcompat-v7:24.2.1'
@@ -21,7 +25,7 @@ e瞳App组培训，简单app的示例代码
     compile 'io.reactivex:rxjava:1.1.0'
 ```
 
-##### 编写Activity的主布局文件(activity_main.xml)
+#### 编写Activity的主布局文件(activity_main.xml)
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -46,7 +50,7 @@ e瞳App组培训，简单app的示例代码
 </RelativeLayout>
 ```
 
-##### 编写业务数据结构(DemoBean)
+#### 编写业务数据结构(DemoBean)
 
 ```java
 public class DemoBean {
@@ -165,7 +169,7 @@ public class DemoBean {
 }
 ```
 
-##### 编写网络请求框架(ApiStores)
+#### 编写网络请求框架(ApiStores)
 
 ```java
 public interface ApiStores {
@@ -174,7 +178,7 @@ public interface ApiStores {
 }
 ```
 
-##### 编写item的布局文件(universal_item_layout.xml)
+#### 编写item的布局文件(universal_item_layout.xml)
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -249,7 +253,7 @@ public interface ApiStores {
 <color name="primary_text">#212121</color>	
 ```
 
-##### 编写adapter
+#### 编写adapter
 
 ```java
 public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHolder> {
@@ -304,7 +308,7 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHo
 }
 ```
 
-##### 编写主要逻辑(MainActivity)
+#### 编写主要逻辑(MainActivity)
 
 ```java
 @Override
@@ -390,7 +394,7 @@ private void loadData(int limit, int page){
     }
 ```
 
-##### 最后别忘了加上网络访问权限哦(AndroidManifest.xml)
+#### 最后别忘了加上网络访问权限哦(AndroidManifest.xml)
 
 ```java
 <uses-permission android:name="android.permission.INTERNET"/>
