@@ -14,7 +14,7 @@ public class DateUtil {
 
 
     private static SimpleDateFormat sf = null;
-    /*时间戳转换成字符窜*/
+    /* 时间戳转换成字符串*/
      public static String getDateToString(long time) {
         Date d = new Date(time*1000);
         sf = new SimpleDateFormat("yyyy年MM月dd日");

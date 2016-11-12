@@ -13,6 +13,13 @@ import rx.Observable;
  */
 
 public interface ApiStores {
+
+    /**
+     * 用于获取当前活动信息
+     * @param limit 每一个的活动个数
+     * @param page 当前页码
+     * @return 活动信息的Observable
+     */
     @GET("index.php/Api/getAcInfo")
     Observable<List<DemoBean>> getLatestAllAcItemsByPage(@Query("limit") int limit, @Query("page") int page);
 }

@@ -27,7 +27,11 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHo
     private List<DemoBean> list = new ArrayList<>();
 
 
-
+    /**
+     * Adapter的构造方法
+     * @param context 当前recyclerView的上下文
+     * @param list 当前从网上获取的数据
+     */
     public DemoAdapter(Context context, List<DemoBean> list){
         this.context = context;
         this.list = list;
@@ -35,7 +39,12 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHo
     }
 
 
-
+    /**
+     * 用来将我们定义的item的layout渲染出来
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public DemoItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.universal_item_layout, parent, false);
@@ -43,6 +52,11 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHo
         return holder;
     }
 
+    /**
+     * 用来将viewholder中的视图和获取的数据绑定
+     * @param holder 当前item中的视图容器
+     * @param position 当前recyclerView的位置
+     */
     @Override
     public void onBindViewHolder(DemoItemViewHolder holder, int position) {
         DemoBean item = list.get(position);
@@ -59,17 +73,25 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoItemViewHo
 
         String contentHtml = item.getActext();
 
+        /* 用正则表达式将获取到的数据中的图片去除 */
         contentHtml = contentHtml.replaceAll("<img .*?/>", "");
 
         holder.contentTextView.setText(Html.fromHtml(contentHtml));
 
     }
 
+    /**
+     * 总共需要加载的item数量
+     * @return 总的item数量
+     */
     @Override
     public int getItemCount() {
         return list.size();
     }
 
+    /**
+     * ViewHolder用来包裹当前每个item中的视图，之所以使用这种方式是因为把所有视图封装到一个容器里，可以显著提高recyclerView的效率
+     */
     public static class DemoItemViewHolder extends RecyclerView.ViewHolder{
 
         private TextView titleTextView;
